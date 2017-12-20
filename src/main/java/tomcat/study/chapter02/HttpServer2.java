@@ -26,7 +26,8 @@ public class HttpServer2 {
 
         ServerSocket serverSocket = null;
         try{
-            serverSocket = new ServerSocket(port,1, InetAddress.getByName("127.0.0.1"));
+            //serverSocket = new ServerSocket(port,1, InetAddress.getByName("127.0.0.1"));
+            serverSocket = new ServerSocket(port);
             System.out.println("http server.2 start...");
 
         }catch (IOException e){
@@ -40,6 +41,7 @@ public class HttpServer2 {
 
             try{
                 socket = serverSocket.accept();
+                socket.setKeepAlive(true);
                 input = socket.getInputStream();
                 output = socket.getOutputStream();
 
