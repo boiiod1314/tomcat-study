@@ -30,6 +30,7 @@
 ### Servlet3.1新特性
 >强制更改sessionId; 升级协议处理
 
+
 ```java
 public interface HttpServletRequest extends ServletRequest {
     /**
